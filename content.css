@@ -1,0 +1,9 @@
+/* 资源嗅探 content script 样式 */
+/* 给被嗅探到的 video 元素在 hover 时加淡蓝描边提示，不影响页面布局 */
+video.__sniff_found {
+  outline: 2px dashed rgba(94, 129, 244, 0.0);
+  transition: outline-color 0.15s ease;
+}
+video.__sniff_found:hover {
+  outline-color: rgba(94, 129, 244, 0.9);
+}

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "资源嗅探 - 视频探测器",
+  "version": "1.0.0",
+  "description": "嗅探网页中的视频资源，支持全屏播放与画中画（PiP）播放，并识别网络媒体流。",
+  "permissions": ["activeTab", "scripting", "storage", "tabs", "downloads"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "资源嗅探",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
